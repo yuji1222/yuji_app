@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DeviseApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="nav justify-content-center">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Edit', edit_user_registration_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link active" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign-up', new_user_registration_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Login', new_user_session_path, class: "nav-link active" %>
+          </li>
+        <% end %>
+        </ul>
+      </nav>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
