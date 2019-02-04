@@ -9,4 +9,13 @@ if Rails.env == 'development'
   (1..50).each do |i|
     Board.create(name: "ユーザー#{i}", title: "タイトル#{i}", body: "本文#{i}")
   end 
+  
+  Tag.create([
+    { name: '体調不良' },
+    { name: '食欲不振' },
+    { name: 'お友達探し' },
+    { name: 'パピー犬' },
+    { name: 'シニア犬' },
+    { name: 'ご飯のレシピ' }
+  ])
 end
