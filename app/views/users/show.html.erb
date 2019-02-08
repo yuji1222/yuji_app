@@ -1,2 +1,15 @@
-<h1>myページ</h1>
+<% if flash[:notice] %>
+  <div class="alert alert-primary"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>マイページ</h1>
 <p>こんにちわ<%= @user.email %>さん</p>
+<a class="btn btn-outline-dark" href="/boards">相談一覧</a>
+<div>
+  <%= form_for @post do |f| %>
+    <%= f.hidden_field :user_id %>
+      <%= f.label :color, 'メモ' %>
+      <%= f.text_field :color %>
+    <%= f.submit 'ウンチ' %>
+  <% end %> 
+</div>  
