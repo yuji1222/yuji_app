@@ -1,4 +1,5 @@
 <div class="d-flex align-items-center">
+  <%= image_tag("wanko.png") %>
   <h1>お悩み相談掲示板一覧</h1>
   <div class="ml-auto boards__linkBox">
     <%= form_tag boards_path, method: :get, class: 'boards_searchForm' do %>
@@ -11,8 +12,8 @@
                      }
       %>
     <% end %>  
-    <a href="/boards/new" class="btn btn-outline-dark">新規作成</a>
   </div>
+  <a href="/boards/new" class="btn btn-outline-dark">相談新規作成</a>
 </div>
 
 
@@ -22,7 +23,7 @@
     <tr>
       <th>ID</th>
       <th>タイトル</th>
-      <th>作成者</th>
+      <th>相談者</th>
       <th>作成日時</th>
       <th>更新日時</th>
       <th></th>

@@ -1,16 +1,19 @@
 
 
-<h1>マイページ</h1>
+<h1>Myページ</h1>
+<h1>
+  <%= gravatar_for @user %>
+</h1>
 <p>こんにちわ<%= @user.email %>さん</p>
-<a class="btn btn-outline-dark" href="/boards">相談一覧</a>
-<div class='post-box'>
-  <%= form_for @post do |f| %>
-    <%= f.hidden_field :user_id %>
-      <%= f.label :color, 'メモ' %>
-      <%= f.text_field :color %>
-    <%= f.submit 'ウンチ' %>
-  <% end %> 
-</div>  
-<div>
+<h2>わんちゃんの毎日のウンチを記録しよう</h2>
+    <div class="post-box">
+      <%= form_for @post do |f| %>
+        <%= f.hidden_field :user_id %>
+          <%= f.label :color, 'メモ' %>
+          <%= f.text_field :color %>
+        <%= f.submit 'ウンチ' %>
+      <% end %> 
+    </div>  
+<div class="post-list">
    <%= render @user.posts %>
 </div>

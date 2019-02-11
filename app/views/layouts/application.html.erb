@@ -18,8 +18,12 @@
           </li>
           <li class="nav-item">
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link active" %>
-          </li><li class="nav-item">
+          </li>
+          <li class="nav-item">
             <%= link_to 'Myページ', user_path(current_user), class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '相談一覧', boards_path, class: "nav-link active" %>
           </li>
         <% else %>
           <li class="nav-item">
