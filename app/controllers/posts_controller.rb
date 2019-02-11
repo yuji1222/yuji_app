@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
+  
   def create
-    post = Post.new(post_params)
-    post.save
+    @post = Post.new(post_params)
+    @post.save
     flash[:notice] = 'ナイスウンチ'
   end
 

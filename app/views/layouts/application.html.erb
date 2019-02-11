@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeviseApp</title>
+    <title>メディワン</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      <nav>
+      <nav class="navbar navbar-light bg-light">
         <ul class="nav justify-content-center">
         <% if user_signed_in? %>
           <li class="nav-item">
@@ -18,6 +18,8 @@
           </li>
           <li class="nav-item">
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link active" %>
+          </li><li class="nav-item">
+            <%= link_to 'Myページ', user_path(current_user), class: "nav-link active" %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -30,8 +32,10 @@
         </ul>
       </nav>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+      <div class="alert alert-danger"><%= flash[:notice] %></div>
+    <% end %>
+    
     <div class="container">
     <%= yield %>
     </div>

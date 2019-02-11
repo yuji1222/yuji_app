@@ -15,4 +15,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  
+  default_scope -> { order(created_at: :desc) }
+  # 新しい順に並べる
 end
