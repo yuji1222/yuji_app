@@ -14,5 +14,6 @@ end
   resources :boards
   resources :comments, only: %i[create destroy]
   resources :posts, only: %i[create destroy]
+  resources :home
   
 end

@@ -6,6 +6,9 @@
 </h1>
 <p>こんにちわ<%= @user.email %>さん</p>
 <h2>わんちゃんの毎日のウンチを記録しよう</h2>
+
+<%= image_tag("toire.png") %>
+
     <div class="post-box">
       <%= form_for @post do |f| %>
         <%= f.hidden_field :user_id %>
@@ -16,4 +19,5 @@
     </div>  
 <div class="post-list">
    <%= render @user.posts %>
+   <%= paginate @posts %>
 </div>

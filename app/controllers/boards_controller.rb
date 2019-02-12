@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
     else
       redirect_to :back, flash: {
         board: board,
-        error_messages: board.errors.full_messages
+        error_messages: board.errors.full_messages 
       }
     end
   end

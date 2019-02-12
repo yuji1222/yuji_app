@@ -28,8 +28,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-gem 'carrierwave'
-gem 'rmagick'
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'kaminari'

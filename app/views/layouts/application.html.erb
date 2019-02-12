@@ -25,6 +25,9 @@
           <li class="nav-item">
             <%= link_to '相談一覧', boards_path, class: "nav-link active" %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'メディワンの使い方', home_index_path, class: "nav-link active" %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to 'Sign-up', new_user_registration_path, class: "nav-link active" %>
@@ -32,8 +35,12 @@
           <li class="nav-item">
             <%= link_to 'Login', new_user_session_path, class: "nav-link active" %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'メディワンの使い方', home_index_path, class: "nav-link active" %>
+          </li>
         <% end %>
         </ul>
+        <p class="medi">メディワン</p>
       </nav>
     </header>
     <% if flash[:notice] %>

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = Post.new(user_id: @user.id)
+    @posts = Post.page(params[:page])
   end
    
  
