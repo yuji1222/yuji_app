@@ -1,0 +1,41 @@
+<% if user_signed_in? %>
+
+  <% unless board.like_user(current_user.id).blank? %>
+    <%= link_to board_like_path(board_id: board.id ,id: board.likes[0].id), method: :delete, remote: true do %>
+      <div>
+        <%= image_tag("red.png") %>
+        <span>
+          <%= board.likes_count %>
+        </span>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to board_likes_path(board.id), method: :post, remote: true do %>
+      <div>
+       <%= image_tag("kuro.png") %>
+        <span>
+          <%= board.likes_count %>
+        </span>
+      </div>
+    <% end %>
+  <% end %>
+
+<% else %>
+
+  <% if board.likes_count > 0 %>
+    <div>
+      <%= image_tag("red.png") %>
+      <span>
+      <%= board.likes_count %>
+      </span>
+    </div>
+  <% else %>
+    <div>
+      <%= image_tag("kuro.pug") %>
+      <span>
+      <%= board.likes_count %>
+      </span>
+    </div>
+  <% end %>
+
+<% end %>
