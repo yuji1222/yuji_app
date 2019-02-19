@@ -24,4 +24,5 @@ class User < ApplicationRecord
   has_many :posts, dependent: :delete_all
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :likes, dependent: :destroy
 end
