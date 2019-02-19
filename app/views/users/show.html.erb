@@ -1,23 +1,23 @@
 
 
 <h1>Myページ</h1>
-<h1>
-  <%= gravatar_for @user %>
-</h1>
-<p>こんにちわ<%= @user.email %>さん</p>
-<h2>わんちゃんの毎日のウンチを記録しよう</h2>
+  <h1>
+    <%= gravatar_for @user %>
+  </h1>
+      <p>こんにちわ<%= @user.email %>さん</p>
+      <h2>わんちゃんの毎日のウンチを記録しよう</h2>
 
-<%= image_tag("toire.png") %>
+        <%= image_tag("toire.png") %>
 
-    <div class="post-box">
-      <%= form_for @post do |f| %>
-        <%= f.hidden_field :user_id %>
-          <%= f.label :color, 'メモ' %>
-          <%= f.text_field :color %>
-        <%= f.submit 'ウンチ' %>
-      <% end %> 
-    </div>  
-<div class="post-list">
-   <%= render @user.posts %>
-   <%= paginate @posts %>
-</div>
+          <div class="post-box">
+              <%= form_for @post do |f| %>
+                  <%= f.hidden_field :user_id %>
+                  <%= f.label :color, 'メモ' %>
+                  <%= f.text_field :color, class: 'form-control' %>
+                  <%= f.submit 'ウンチ',class: "btn btn-primary" %>
+              <% end %> 
+          </div>  
+          <div class="post-list">
+               <%= render @user.posts %>
+               <%= paginate @posts %>
+          </div>
