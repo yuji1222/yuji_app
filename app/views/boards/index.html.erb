@@ -40,11 +40,6 @@
         <td><%= board.name %></td>
         <td><%= board.created_at.to_s(:datetime_jp) %></td>
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
-        <td>
-           <span id="likes_buttons_<%= board.id %>">
-              <%= render partial: 'likes/like', locals: { board: board, likes: @likes} %>
-           </span>
-        </td>
         <td><%= link_to '詳細', board, class: 'btn btn-outline-dark' %></td>
         <td><%= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete %></td>
        

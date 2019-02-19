@@ -1,7 +1,9 @@
+<div class="shadow-lg p-3 mb-5 bg-white rounded">
 <div class="p-comment__item">
   <p><%= simple_format(post.color) %></p>
   <div class="p-comment__bottomLine">
     <span><%= post.created_at.to_s(:datetime_jp) %></span>
     <span><%= link_to '削除', post, class: 'btn btn-outline-dark', method: :delete %></span>
   </div>
+</div>
 </div>

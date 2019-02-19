@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   before_action :set_target_board, only: %i[show edit update destroy]
 
   def index
-     @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
+    @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
     @boards = @boards.page(params[:page])
   end
 
@@ -22,7 +22,7 @@ class BoardsController < ApplicationController
       }
     end
   end
-
+  
   def show
     @comment = Comment.new(board_id: @board.id)
   end
